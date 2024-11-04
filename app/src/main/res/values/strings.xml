@@ -1,9 +1,6 @@
 <resources>
     <string name="app_name">InstagramClone</string>
     <string name="title_activity_home">HomeActivity</string>
-    <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
     <string name="email">Email</string>
     <string name="name_username">Name/Username</string>
     <string name="password">Password</string>
@@ -12,4 +9,24 @@
     <string name="login">Login</string>
     <string name="instagram_logo">Instagram Logo</string>
     <string name="create_new_account">Create New Account</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="nav_home">Home</string>
+    <string name="nav_search">Search</string>
+    <string name="nav_add">Add</string>
+    <string name="nav_reel">Reels</string>
+    <string name="nav_profile">Profile</string>
+    <string name="name">name</string>
+    <string name="bio">bio</string>
+    <string name="edit_profile">Edit Profile</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="add_reel">Add Reel</string>
+    <string name="add_post">Add Post</string>
+    <string name="write_a_caption">Write a Caption</string>
+    <string name="share_to_post">Share to Post</string>
+    <string name="your_post_may_appear_in_posts_and_can_be_seen_on_the_posts_tab_of_your_profile">Your post may appear in Posts and can be seen on the Posts tab of your profile</string>
+    <string name="post">Post</string>
+    <string name="cancel">Cancel</string>
+    <string name="select_reel">Select Reel</string>
+    <string name="share_to_reel">Share to Reel</string>
 </resources>

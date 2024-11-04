@@ -3,4 +3,30 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/navigation_home"/>
+    app:startDestination="@+id/home">
+    <fragment
+        android:id="@+id/home"
+        android:name="org.myd.instagramclone.fragments.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" />
+    <fragment
+        android:id="@+id/search"
+        android:name="org.myd.instagramclone.fragments.SearchFragment"
+        android:label="fragment_search"
+        tools:layout="@layout/fragment_search" />
+    <dialog
+        android:id="@+id/add"
+        android:name="org.myd.instagramclone.fragments.AddFragment"
+        android:label="fragment_add"
+        tools:layout="@layout/fragment_add" />
+    <fragment
+        android:id="@+id/reel"
+        android:name="org.myd.instagramclone.fragments.ReelFragment"
+        android:label="fragment_reel"
+        tools:layout="@layout/fragment_reel" />
+    <fragment
+        android:id="@+id/profile"
+        android:name="org.myd.instagramclone.fragments.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" />
+</navigation>

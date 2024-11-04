@@ -61,4 +61,9 @@ dependencies {
     // Import the BoM for the Firebase platform
     implementation(platform(libs.firebase.bom))
 
+    implementation (libs.picasso)
+    implementation (libs.roundedimageview)
+
+    implementation (libs.glide)
+
 }
