@@ -11,7 +11,9 @@ import com.google.firebase.auth.auth
 import com.google.firebase.firestore.firestore
 import com.google.firebase.firestore.toObject
 import org.myd.instagramclone.adapters.MyReelAdapter
+import org.myd.instagramclone.databinding.FragmentMyPostBinding
 import org.myd.instagramclone.databinding.FragmentMyReelsBinding
+import org.myd.instagramclone.databinding.FragmentReelBinding
 import org.myd.instagramclone.models.Reel
 import org.myd.instagramclone.utils.REEL
 
@@ -27,7 +29,7 @@ class MyReelsFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        binding = FragmentMyReelsBinding.inflate(inflater, container, false)
+            binding = FragmentMyReelsBinding.inflate(inflater, container, false)
         var reelList = ArrayList<Reel>()
         var adapter = MyReelAdapter(requireContext(), reelList)
         binding.rv.layoutManager = StaggeredGridLayoutManager(3, StaggeredGridLayoutManager.VERTICAL)

@@ -24,7 +24,7 @@ fun uploadVideo(
     progressDialog: ProgressDialog,
     callback: (String?)-> Unit
 ) {
-    var videoUrl:String?=null
+    var videoUrl: String? = null
     progressDialog.setTitle("Uploading . . .")
     progressDialog.show()
 
@@ -40,6 +40,6 @@ fun uploadVideo(
         }
         .addOnProgressListener {
             val uploadedValue : Long = it.bytesTransferred/it.totalByteCount
-            progressDialog.setMessage("Uploaded $uploadedValue%")
+            progressDialog.setMessage("Uploaded $uploadedValue %")
         }
 }

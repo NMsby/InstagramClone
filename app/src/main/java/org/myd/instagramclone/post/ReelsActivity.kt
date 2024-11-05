@@ -25,7 +25,7 @@ class ReelsActivity : AppCompatActivity() {
         ActivityReelsBinding.inflate(layoutInflater)
     }
     private lateinit var videoUrl: String
-    lateinit var progressDialog : ProgressDialog
+    private lateinit var progressDialog : ProgressDialog
     private val launcher = registerForActivityResult(ActivityResultContracts.GetContent()) { uri ->
         uri?.let {
             uploadVideo(uri, REEL_FOLDER, progressDialog) {
