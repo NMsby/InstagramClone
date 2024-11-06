@@ -1,5 +1,6 @@
 package org.myd.instagramclone.fragments
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -11,9 +12,7 @@ import com.google.firebase.auth.auth
 import com.google.firebase.firestore.firestore
 import com.google.firebase.firestore.toObject
 import org.myd.instagramclone.adapters.MyReelAdapter
-import org.myd.instagramclone.databinding.FragmentMyPostBinding
 import org.myd.instagramclone.databinding.FragmentMyReelsBinding
-import org.myd.instagramclone.databinding.FragmentReelBinding
 import org.myd.instagramclone.models.Reel
 import org.myd.instagramclone.utils.REEL
 
@@ -24,6 +23,7 @@ class MyReelsFragment : Fragment() {
 
     }
 
+    @SuppressLint("NotifyDataSetChanged")
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?

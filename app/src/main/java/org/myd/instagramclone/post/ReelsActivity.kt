@@ -10,13 +10,16 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.firestore.ktx.toObject
 import com.google.firebase.ktx.Firebase
 import org.myd.instagramclone.HomeActivity
 import org.myd.instagramclone.R
 import org.myd.instagramclone.databinding.ActivityReelsBinding
 import org.myd.instagramclone.models.Reel
+import org.myd.instagramclone.models.User
 import org.myd.instagramclone.utils.REEL
 import org.myd.instagramclone.utils.REEL_FOLDER
+import org.myd.instagramclone.utils.USER_NODE
 import org.myd.instagramclone.utils.uploadVideo
 
 class ReelsActivity : AppCompatActivity() {
@@ -59,16 +62,19 @@ class ReelsActivity : AppCompatActivity() {
         }
 
         binding.postButton.setOnClickListener {
-            val reel = Reel(videoUrl!!, binding.caption.editText?.text.toString())
+            Firebase.firestore.collection(USER_NODE).document(Firebase.auth.currentUser!!.uid).get().addOnSuccessListener {
+                var user : User = it.toObject<User>()!!
+                val reel = Reel(videoUrl!!, binding.caption.editText?.text.toString(), user.image!!)
 
-            Firebase.firestore.collection(REEL).document().set(reel).addOnSuccessListener {
-                Firebase.firestore.collection(Firebase.auth.currentUser!!.uid + REEL).document().set(reel)
-                    .addOnSuccessListener {
-                        startActivity(Intent(this@ReelsActivity, HomeActivity::class.java))
-                        finish()
+                Firebase.firestore.collection(REEL).document().set(reel).addOnSuccessListener {
+                    Firebase.firestore.collection(Firebase.auth.currentUser!!.uid + REEL).document()
+                        .set(reel)
+                        .addOnSuccessListener {
+                            startActivity(Intent(this@ReelsActivity, HomeActivity::class.java))
+                            finish()
+                        }
                 }
             }
         }
-
     }
 }

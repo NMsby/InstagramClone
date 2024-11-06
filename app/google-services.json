@@ -1,13 +1,14 @@
 {
   "project_info": {
-    "project_number": "442183549409",
-    "project_id": "org-myd-instagramclone",
-    "storage_bucket": "org-myd-instagramclone.firebasestorage.app"
+    "project_number": "492142076372",
+    "firebase_url": "https://instagramclone-nmsby-default-rtdb.firebaseio.com",
+    "project_id": "instagramclone-nmsby",
+    "storage_bucket": "instagramclone-nmsby.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:442183549409:android:46773caf3255dd4171d2a0",
+        "mobilesdk_app_id": "1:492142076372:android:9ac47f562add354b243641",
         "android_client_info": {
           "package_name": "org.myd.instagramclone"
         }
@@ -15,7 +16,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyBRFBsqrDYd1OQnTrP9-o-vztBDHKjBFfI"
+          "current_key": "AIzaSyDoYh3ECVqXNbKMJUzDKfxJtpymmNXWwbQ"
         }
       ],
       "services": {
