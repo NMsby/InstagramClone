@@ -6,9 +6,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
-import com.squareup.picasso.Picasso
 import org.myd.instagramclone.databinding.MyPostRvDesignBinding
-import org.myd.instagramclone.models.Post
 import org.myd.instagramclone.models.Reel
 
 class MyReelAdapter(var context: Context, private var reelList: ArrayList<Reel>) :

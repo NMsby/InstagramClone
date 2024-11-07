@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.firestore.toObject
 import com.google.firebase.ktx.Firebase
+import org.myd.instagramclone.adapters.MyReelAdapter
 import org.myd.instagramclone.adapters.ReelAdapter
 import org.myd.instagramclone.databinding.FragmentReelBinding
 import org.myd.instagramclone.models.Reel
