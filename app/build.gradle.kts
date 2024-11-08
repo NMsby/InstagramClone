@@ -54,16 +54,19 @@ dependencies {
     implementation(libs.androidx.lifecycle.viewmodel.ktx)
     implementation(libs.androidx.navigation.fragment.ktx)
     implementation(libs.androidx.navigation.ui.ktx)
+    implementation(libs.androidx.legacy.support.v4)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
-    implementation (libs.circleimageview)
+    implementation(libs.circleimageview)
     // Import the BoM for the Firebase platform
     implementation(platform(libs.firebase.bom))
 
-    implementation (libs.picasso)
-    implementation (libs.roundedimageview)
+    implementation(libs.picasso)
+    implementation(libs.roundedimageview)
 
-    implementation (libs.glide)
+    implementation(libs.glide)
+
+    implementation("com.github.marlonlom:timeago:4.0.0")
 
 }
