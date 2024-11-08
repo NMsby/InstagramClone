@@ -29,4 +29,10 @@
     <string name="cancel">Cancel</string>
     <string name="select_reel">Select Reel</string>
     <string name="share_to_reel">Share to Reel</string>
+    <string name="search">Search</string>
+    <string name="like">like</string>
+    <string name="message">message</string>
+    <string name="chat">chat</string>
+    <string name="share">share</string>
+    <string name="todo">todo</string>
 </resources>
