@@ -7,15 +7,19 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.google.firebase.Firebase
-import com.google.firebase.auth.auth
-import com.google.firebase.firestore.firestore
+import com.google.firebase.auth.ktx.auth
+
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.firestore.ktx.toObject
+import com.google.firebase.ktx.Firebase
 import org.myd.instagramclone.HomeActivity
 import org.myd.instagramclone.R
 import org.myd.instagramclone.databinding.ActivityPostBinding
 import org.myd.instagramclone.models.Post
+import org.myd.instagramclone.models.User
 import org.myd.instagramclone.utils.POST
 import org.myd.instagramclone.utils.POST_FOLDER
+import org.myd.instagramclone.utils.USER_NODE
 import org.myd.instagramclone.utils.uploadImage
 
 class PostActivity : AppCompatActivity() {
@@ -63,12 +67,22 @@ class PostActivity : AppCompatActivity() {
         }
 
         binding.postButton.setOnClickListener {
-            val post = Post(imageUrl!!, binding.caption.editText?.text.toString())
+            Firebase.firestore.collection(USER_NODE).document().get()
+                .addOnSuccessListener {
+                var user = it.toObject<User>()!!
+                val post: Post = Post(
+                    postUrl = imageUrl!!,
+                    caption = binding.caption.editText?.text.toString(),
+                    uid = Firebase.auth.currentUser!!.uid,
+                    time = System.currentTimeMillis().toString()
+                )
 
-            Firebase.firestore.collection(POST).document().set(post).addOnSuccessListener {
-                Firebase.firestore.collection(Firebase.auth.currentUser!!.uid).document().set(post).addOnSuccessListener {
-                    startActivity(Intent(this@PostActivity, HomeActivity::class.java))
-                    finish()
+                Firebase.firestore.collection(POST).document().set(post).addOnSuccessListener {
+                    Firebase.firestore.collection(Firebase.auth.currentUser!!.uid).document()
+                        .set(post).addOnSuccessListener {
+                        startActivity(Intent(this@PostActivity, HomeActivity::class.java))
+                        finish()
+                    }
                 }
             }
         }
